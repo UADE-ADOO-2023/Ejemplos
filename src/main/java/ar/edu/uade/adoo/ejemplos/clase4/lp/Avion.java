@@ -12,16 +12,12 @@ public class Avion extends Vehiculo {
         this.altitud = altitud;
     }
 
-    public int obtenerMatricula() {
+    @Override
+    public int getMatricula() {
         return this.matricula;
     }
 
     public double obtenerAltitud() {
         return altitud;
-    }
-
-    @Override
-    public void realizarVTV() {
-        throw new UnsupportedOperationException("Los aviones no realizan VTV");
     }
 }

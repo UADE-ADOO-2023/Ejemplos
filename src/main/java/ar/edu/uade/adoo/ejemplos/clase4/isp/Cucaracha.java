@@ -10,9 +10,4 @@ public class Cucaracha extends Animal {
     public void alimentar() {
         System.out.println("Alimentando a la cucaracha " + this.nombre);
     }
-
-    @Override
-    public void acariciar() {
-        // Las cucarachas no se acarician (por suerte)
-    }
 }

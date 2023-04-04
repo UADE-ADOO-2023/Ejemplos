@@ -1,17 +1,14 @@
 package ar.edu.uade.adoo.ejemplos.clase4;
 
-import ar.edu.uade.adoo.ejemplos.clase4.dip.Articulo;
-import ar.edu.uade.adoo.ejemplos.clase4.dip.Tienda;
-import ar.edu.uade.adoo.ejemplos.clase4.isp.Animal;
-import ar.edu.uade.adoo.ejemplos.clase4.isp.Cucaracha;
-import ar.edu.uade.adoo.ejemplos.clase4.isp.Perro;
-import ar.edu.uade.adoo.ejemplos.clase4.isp.Veterinaria;
+import ar.edu.uade.adoo.ejemplos.clase4.dip.*;
+import ar.edu.uade.adoo.ejemplos.clase4.isp.*;
 import ar.edu.uade.adoo.ejemplos.clase4.lp.AplicacionRegistro;
 import ar.edu.uade.adoo.ejemplos.clase4.lp.Auto;
 import ar.edu.uade.adoo.ejemplos.clase4.lp.Avion;
 import ar.edu.uade.adoo.ejemplos.clase4.ocp.AplicacionLiquidacion;
 import ar.edu.uade.adoo.ejemplos.clase4.ocp.Empresa;
-import ar.edu.uade.adoo.ejemplos.clase4.ocp.TipoEmpleado;
+import ar.edu.uade.adoo.ejemplos.clase4.ocp.Gerente;
+import ar.edu.uade.adoo.ejemplos.clase4.ocp.Programador;
 import ar.edu.uade.adoo.ejemplos.clase4.srp.AplicacionGeometrica;
 import ar.edu.uade.adoo.ejemplos.clase4.srp.AplicacionGrafica;
 import org.junit.Test;
@@ -31,13 +28,14 @@ public class Clase4Tests {
 
     @Test
     public void ocpTest() {
+        int bonoBase = 10000;
         Empresa empresa = new Empresa();
-        empresa.agregarEmpleado("Ana", "Martinez", TipoEmpleado.PROGRAMADOR);
-        empresa.agregarEmpleado("Paula", "Perez", TipoEmpleado.PROGRAMADOR);
-        empresa.agregarEmpleado("Romina", "Ramirez", TipoEmpleado.PROGRAMADOR);
-        empresa.agregarEmpleado("The boss", "Martinez", TipoEmpleado.GERENTE);
-        assertEquals(18000, AplicacionLiquidacion.obtenerLiquidacionParaTipoEmpleado(empresa, TipoEmpleado.PROGRAMADOR), 0D);
-        assertEquals(12000, AplicacionLiquidacion.obtenerLiquidacionParaTipoEmpleado(empresa, TipoEmpleado.GERENTE), 0D);
+        empresa.agregarEmpleado(new Programador("Ana", "Martinez", bonoBase));
+        empresa.agregarEmpleado(new Programador("Paula", "Perez", bonoBase));
+        empresa.agregarEmpleado(new Programador("Romina", "Ramirez", bonoBase));
+        empresa.agregarEmpleado(new Gerente("The boss", "Martinez", bonoBase));
+        assertEquals(18000, AplicacionLiquidacion.obtenerLiquidacionProgramadores(empresa), 0D);
+        assertEquals(12000, AplicacionLiquidacion.obtenerLiquidacionGerentes(empresa), 0D);
     }
 
     @Test
@@ -47,7 +45,7 @@ public class Clase4Tests {
         registro.registrarVehiculo(new Auto(982899));
         registro.registrarVehiculo(new Avion(45));
         assertEquals(3, registro.obtenerIdentificadoresDeVehiculos().size());
-        // registro.realizarVTVVehiculos();
+        //registro.realizarVTVVehiculos();
     }
 
     @Test
@@ -60,9 +58,8 @@ public class Clase4Tests {
         veterinaria.agregarAnimal(cuca);
         veterinaria.agregarAnimal(firulais);
         veterinaria.alimentarAnimales();
-        blackie.acariciar();
-        cuca.acariciar();
-        firulais.acariciar();
+        ((IMascota)blackie).acariciar();
+        ((IMascota)firulais).acariciar();
     }
 
     @Test
@@ -71,7 +68,8 @@ public class Clase4Tests {
         Articulo mouse = new Articulo("Logitech M21", 20000);
         Articulo sdd = new Articulo("SDD Western Digital Black", 70000);
         List<Articulo> articulos = Arrays.asList(notebook, mouse, sdd);
-        Tienda.guardarArticulos(articulos);
-        Tienda.comprarArticulos(articulos);
+        Compra compra = new Compra(new SQLDB(), new TarjetaDebito());
+        compra.guardarArticulos(articulos);
+        compra.comprarArticulos(articulos);
     }
 }

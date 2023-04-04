@@ -13,13 +13,19 @@ public class Rectangulo {
         return this.lado * this.altura;
     }
 
-    public void dibujar() {
-        for (int i = 0; i < this.altura; i++) {
-            for (int j = 0; j < this.lado; j++) {
-                GUI.mostrar("□");
-            }
-            GUI.mostrar("\n");
-        }
+    public int getLado() {
+        return lado;
+    }
 
+    public void setLado(int lado) {
+        this.lado = lado;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
     }
 }

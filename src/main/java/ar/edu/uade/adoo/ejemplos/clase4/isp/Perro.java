@@ -1,6 +1,6 @@
 package ar.edu.uade.adoo.ejemplos.clase4.isp;
 
-public class Perro extends Animal {
+public class Perro extends Animal implements IMascota{
     public Perro(String nombre) {
         super(nombre);
     }

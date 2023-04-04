@@ -7,11 +7,11 @@ public class Auto extends Vehiculo {
         this.patente = patente;
     }
 
-    public int obtenerPatente() {
+    @Override
+    public int getMatricula() {
         return this.patente;
     }
 
-    @Override
     public void realizarVTV() {
         System.out.println("Verificando estado");
     }

@@ -17,19 +17,16 @@ public class AplicacionRegistro {
     public List<Integer> obtenerIdentificadoresDeVehiculos() {
         List<Integer> identificadores = new ArrayList<>();
         for (Vehiculo vehiculo: this.vehiculos) {
-            if (vehiculo instanceof Auto) {
-                identificadores.add(((Auto) vehiculo).obtenerPatente());
-            }
-            if (vehiculo instanceof Avion) {
-                identificadores.add(((Avion) vehiculo).obtenerMatricula());
-            }
+            identificadores.add(vehiculo.getMatricula());
         }
         return identificadores;
     }
 
     public void realizarVTVVehiculos() {
         for (Vehiculo vehiculo: this.vehiculos) {
-            vehiculo.realizarVTV();
+            if (vehiculo instanceof Auto) {
+                ((Auto) vehiculo).realizarVTV();
+            }
         }
     }
 }
