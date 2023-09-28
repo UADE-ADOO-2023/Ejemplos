@@ -1,4 +1,4 @@
-package ar.edu.uade.adoo.ejemplos.patrones.adapter;
+package ar.edu.uade.adoo.ejemplos.patrones.adapter.formas;
 
 public class Linea implements IForma {
     @Override

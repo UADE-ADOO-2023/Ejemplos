@@ -1,8 +1,9 @@
-package ar.edu.uade.adoo.ejemplos.patrones.composite;
+package ar.edu.uade.adoo.ejemplos.patrones.composite.formas;
 
 import java.util.ArrayList;
 import java.util.List;
 
+// Composite
 public class GrupoFormas implements IForma {
     private List<IForma> formas;
 
@@ -22,8 +23,7 @@ public class GrupoFormas implements IForma {
         Equivalente a
         this.formas.forEach(forma -> forma.pintar());
         o
-        for (IForma forma: this.formas
-             ) {
+        for (IForma forma: this.formas) {
             forma.pintar();
         }
         o

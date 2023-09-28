@@ -1,4 +1,4 @@
-package ar.edu.uade.adoo.ejemplos.patrones.adapter;
+package ar.edu.uade.adoo.ejemplos.patrones.adapter.formas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class EditorFormas {
     public static void main(String[] args) {
         List<IForma> formas = new ArrayList<>();
         IForma linea = new Linea();
-        IForma texto = new Texto("Hola curso ADOO!");
+        IForma texto = new Texto("Hola como estas!");
         formas.add(linea);
         formas.add(texto);
         for (IForma forma: formas) {

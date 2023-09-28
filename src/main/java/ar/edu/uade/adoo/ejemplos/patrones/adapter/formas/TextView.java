@@ -1,4 +1,4 @@
-package ar.edu.uade.adoo.ejemplos.patrones.adapter;
+package ar.edu.uade.adoo.ejemplos.patrones.adapter.formas;
 
 // Asumimos que esta clase pertenece a una libreria, es la adaptada
 public class TextView {

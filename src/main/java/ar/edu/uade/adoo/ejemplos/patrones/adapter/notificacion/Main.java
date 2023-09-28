@@ -1,4 +1,4 @@
-package ar.edu.uade.adoo.ejemplos.patrones.adapter2;
+package ar.edu.uade.adoo.ejemplos.patrones.adapter.notificacion;
 
 //Cliente
 public class Main {
