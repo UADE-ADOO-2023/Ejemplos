@@ -1,6 +1,6 @@
 package ar.edu.uade.adoo.ejemplos.patrones.decorator;
 
-public class Decorator extends ComponenteVisual {
+public abstract class Decorator extends ComponenteVisual {
     private ComponenteVisual componenteVisual;
 
     public Decorator(ComponenteVisual componenteVisual) {

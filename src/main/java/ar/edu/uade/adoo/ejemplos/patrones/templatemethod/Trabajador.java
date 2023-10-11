@@ -11,15 +11,15 @@ public abstract class Trabajador {
         dormir();
     }
 
-    public void levantarse() {
+    private void levantarse() {
         System.out.println("Me levanto");
     }
 
-    public void cambiarse() {
+    private void cambiarse() {
         System.out.println("Me cambio");
     }
 
-    public void prepararDesayuno() {
+    private void prepararDesayuno() {
         System.out.println("Preparo desayuno");
     }
 
@@ -27,7 +27,7 @@ public abstract class Trabajador {
         System.out.println("Me baño");
     }
 
-    public void dormir() {
+    public final void dormir() {
         System.out.println("Me voy a dormir");
     }
 
