@@ -7,8 +7,8 @@ public class SistemaArchivosWindows implements SistemaArchivos{
     }
 
     @Override
-    public void escribirArchivo() {
-        System.out.println("Escribiendo archivo en Windows");
+    public void escribirArchivo(String pathOrigen, String pathDestino) {
+        System.out.println("Escribiendo archivo " + pathOrigen + " en destino " + pathDestino + " en Windows");
     }
 
     @Override

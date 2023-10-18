@@ -34,16 +34,4 @@ public class Fecha {
         this.fecha = this.fecha.plusDays(1L);
     }
 
-    class Memento {
-        private LocalDate fecha;
-
-        public Memento(LocalDate fecha) {
-            this.fecha = fecha;
-        }
-
-        public LocalDate getFecha() {
-            return fecha;
-        }
-    }
-
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Historia {
-    private List<Fecha.Memento> historia;
+    private List<Memento> historia;
     private Fecha fecha;
 
     public Historia(Fecha fecha) {

@@ -7,8 +7,8 @@ public class SistemaArchivosUnix implements SistemaArchivos{
     }
 
     @Override
-    public void escribirArchivo() {
-        System.out.println("Escribiendo archivo en Unix");
+    public void escribirArchivo(String pathOrigen, String pathDestino) {
+        System.out.println("Escribiendo archivo " + pathOrigen + " en destino " + pathDestino + " en Unix");
     }
 
     @Override
